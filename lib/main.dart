@@ -1,5 +1,6 @@
 import 'package:project_satrio/form.dart';
 import 'package:flutter/material.dart';
+import 'package:project_satrio/page/to_do_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -97,6 +99,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(builder: (context) => const MyFormPage()),
                   );
+                },
+              ),
+              ListTile(
+                title: const Text('To Do'),
+                onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ToDoPage()),
+                    );
                 },
               ),
             ],
